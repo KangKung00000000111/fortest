@@ -1,3 +1,4 @@
+print("Hi")
 getgenv().VALUE_SETTINGS = {
     Distance = 7, --<number>
     Start = {

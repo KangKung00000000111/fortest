@@ -68,7 +68,7 @@ spawn(function()
                         LastSelect = v
                     end
                 end
-            return LastSelect:spirit("|")
+            return LastSelect:split("|")
             end
             print(10)
             print(type(LastData))

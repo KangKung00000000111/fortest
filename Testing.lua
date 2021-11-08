@@ -78,7 +78,7 @@ spawn(function()
             if getgenv().VALUE_SETTINGS.Start.AutoFarm then
                 print(GetingQuest(LastData[3]))
                 if GetingQuest(LastData[3]) then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = KangFindNearest(tostring(LastData[1]), game.workspace.NPCs).HumanoidRootPart.CFrame * CFrame.new(0, 0, 3) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * tostring(getgenv().VALUE_SETTINGS.Distance)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = KangFindNearest(tostring(LastData[1]), game.workspace.Game.Characters).HumanoidRootPart.CFrame * CFrame.new(0, 0, 3) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * tostring(getgenv().VALUE_SETTINGS.Distance)
                 end
             end
         end)

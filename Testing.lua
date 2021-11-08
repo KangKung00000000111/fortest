@@ -67,12 +67,15 @@ spawn(function()
                     if tonumber(LastLevel) >= tonumber(FoundLevel) then
                         LastSelect = v
                     end
-                   print(LastSelect)
                 end
             return LastSelect:spirit("|")
             end
+            print(10)
+            print(type(LastData))
             local LastData = Data()
+            print(11)
             table.foreach(LastData, print)
+            print(12)
             if getgenv().VALUE_SETTINGS.Start.AutoFarm then
                 print(1)
                 if GetingQuest(LastData[3]) then

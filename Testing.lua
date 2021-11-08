@@ -13,7 +13,7 @@ getgenv().VALUE_SETTINGS = {
 
 
 
-
+print("-----------")
 
 
 
@@ -47,8 +47,7 @@ local KangFindNearest = function(Object,Path)
         return ObjectNearest
     end
 end
-print(GetingLevel())
-print(2)
+
 local GetingQuest = function(QuestName)
     if not game.Players.LocalPlayer:FindFirstChild("Quest") and getgenv().VALUE_SETTINGS.Start.AutoQuest then
       game.ReplicatedStroage.Remote.Geral:FireServer("Quest", tostring(QuestName))
@@ -56,15 +55,18 @@ local GetingQuest = function(QuestName)
     end
     return true
 end
-print(1)
+
 spawn(function()
     while wait() do
+        print(3)
         pcall(function()
+            print(4)
             local Data = function()
                 local LastSelect
                 local LastLevel = GetingLevel()
                 for i, v in pairs(getgenv().VALUE_SETTINGS.Mob) do
                     local FoundLevel = string.match(v, "%d+")
+                    print(FoundLevel)
                     if tonumber(LastLevel) >= tonumber(FoundLevel) then
                         LastSelect = v
                     end

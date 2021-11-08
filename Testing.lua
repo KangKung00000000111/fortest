@@ -64,10 +64,10 @@ spawn(function()
                 local LastLevel = GetingLevel()
                 for i, v in pairs(getgenv().VALUE_SETTINGS.Mob) do
                     local FoundLevel = string.match(v, "%d+")
-                    print(FoundLevel)
                     if tonumber(LastLevel) >= tonumber(FoundLevel) then
                         LastSelect = v
                     end
+                   print(LastSelect)
                 end
             return LastSelect:spirit("|")
             end

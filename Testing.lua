@@ -5,8 +5,8 @@ getgenv().VALUE_SETTINGS = {
         AutoQuest = true
     },
     Mob = {
-        "Bandit|0|Bandit",
-        "pirate|20|PirateQuest"
+        "Bandit|0",
+        "Pirate|20"
     } --<string> MobName|LvPlayer|QuestArgument
 }
 
@@ -26,13 +26,13 @@ local KangFindNearest = function(Object,Path)
         local ObjectNearest;
         local NearestList = {};
         for _, NewPath in pairs(Path:GetChildren()) do
-            if NewPath.ClassName == "Forder" then
+            --if NewPath.ClassName == "Forder" then
                 for i,v in pairs(NewPath:GetChildren()) do
                     if v.Name == ObjectName and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 then
                         table.insert(NearestList,v)
                     end
                 end
-            end
+            --end
         end
         if NearestList[1] ~= nil then
             ObjectNearest = NearestList[1]
@@ -70,16 +70,13 @@ spawn(function()
                 end
             return LastSelect:split("|")
             end
-            print(10)
             local LastData = Data()
-            print(type(LastData))
-            print(11)
-            table.foreach(LastData, print)
-            print(12)
+            print(unpack(LastData))
             if getgenv().VALUE_SETTINGS.Start.AutoFarm then
                 print(1)
-                if GetingQuest(LastData[3]) then
+                if GetingQuest(LastData[1]) then
                     print(2)
+                    print(KangFindNearest(tostring(LastData[1]), game.workspace.Game.Characters)
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = KangFindNearest(tostring(LastData[1]), game.workspace.Game.Characters).HumanoidRootPart.CFrame * CFrame.new(0, 0, 3) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * tostring(getgenv().VALUE_SETTINGS.Distance)
                     print(3)
                 end

@@ -58,9 +58,7 @@ end
 
 spawn(function()
     while wait() do
-        print(3)
         pcall(function()
-            print(4)
             local Data = function()
                 local LastSelect
                 local LastLevel = GetingLevel()
@@ -74,11 +72,13 @@ spawn(function()
             return LastSelect:spirit("|")
             end
             local LastData = Data()
-            print(unpack(LastData))
+            table.foreach(LastData, print)
             if getgenv().VALUE_SETTINGS.Start.AutoFarm then
-                print(GetingQuest(LastData[3]))
+                print(1)
                 if GetingQuest(LastData[3]) then
+                    print(2)
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = KangFindNearest(tostring(LastData[1]), game.workspace.Game.Characters).HumanoidRootPart.CFrame * CFrame.new(0, 0, 3) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.LookVector * tostring(getgenv().VALUE_SETTINGS.Distance)
+                    print(3)
                 end
             end
         end)

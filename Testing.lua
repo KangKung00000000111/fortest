@@ -72,7 +72,7 @@ spawn(function()
             return LastSelect:spirit("|")
             end
             local LastData = Data()
-            print(unpack(LastData)
+            print(unpack(LastData))
             if getgenv().VALUE_SETTINGS.Start.AutoFarm then
                 print(GetingQuest(LastData[3]))
                 if GetingQuest(LastData[3]) then
